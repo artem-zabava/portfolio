@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #fdf4dc;
+  --cream-dark: #f5e8bc;
+  --ink: #1a0800;
+  --red: #c8272a;
+  --red-light: #e8423f;
+  --yellow: #f2c12e;
+  --yellow-dark: #d4a017;
+  --blue: #2a5fa5;
+  --blue-light: #3a7bc8;
+  --green: #2d8a4e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-ink: var(--ink);
+  --color-red: var(--red);
+  --color-red-light: var(--red-light);
+  --color-yellow: var(--yellow);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-blue: var(--blue);
+  --color-blue-light: var(--blue-light);
+  --color-green: var(--green);
+
+  --font-primary: var(--font-nunito);
+  --font-secondary: var(--font-luckiest-guy);
+
+  --font-code: var(--font-courier-prime);
+
+  --shadow: 5px 5px 0px var(--ink);
+  --shadow-xs: 2px 2px 0px var(--ink);
+  --shadow-sm: 3px 3px 0px var(--ink);
+  --shadow-lg: 7px 7px 0px var(--ink);
+
+  --text-stroke: 2px var(--ink);
+
+  --animate-cursor-blink: cursorBlink 1s var(--animation-delay, 0ms) infinite;
+
+  --animate-star-float: starFloat 4s ease-in-out var(--animation-delay, 0ms)
+    infinite;
+
+  --animate-pop: pop 0.6s cubic-bezier(0.36, 2, 0.6, 0.8)
+    var(--animation-delay, 0ms) both;
+
+  --animate-terminal: terminal 0.6s cubic-bezier(0.36, 2, 0.6, 0.8)
+    var(--animation-delay, 0ms) both;
+  --animate-slide: slide 0.7s cubic-bezier(0.36, 2, 0.6, 0.8)
+    var(--animation-delay, 0ms) both;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility animate-delay-100 {
+  --animation-delay: 100ms;
+}
+
+@utility animate-delay-200 {
+  --animation-delay: 200ms;
+}
+
+@utility animate-delay-350 {
+  --animation-delay: 350ms;
+}
+@utility animate-delay-400 {
+  --animation-delay: 400ms;
+}
+
+@utility animate-delay-500 {
+  --animation-delay: 500ms;
+}
+
+@utility animate-delay-650 {
+  --animation-delay: 650ms;
+}
+@utility animate-delay-700 {
+  --animation-delay: 700ms;
+}
+@utility animate-delay-1200 {
+  --animation-delay: 1200ms;
+}
+@utility animate-delay-1800 {
+  --animation-delay: 1800ms;
+}
+@utility animate-delay-2100 {
+  --animation-delay: 2100ms;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+}
+
+@keyframes terminal {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(40px) skewX(-8deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cursorBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes starFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(20deg);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-nunito), sans-serif;
 }
