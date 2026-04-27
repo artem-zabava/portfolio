@@ -1,24 +1,24 @@
 import Link from "next/link";
-
 import { SECTIONS } from "@/lib/consts";
+import { Skills } from "@/views/skills";
 import { Summary } from "@/views/summary";
 
 const links = [
   {
     label: SECTIONS.home,
-    to: `/#${SECTIONS.home}`,
+    to: `#${SECTIONS.home}`,
   },
   {
     label: SECTIONS.skills,
-    to: `/#${SECTIONS.skills}`,
+    to: `#${SECTIONS.skills}`,
   },
   {
     label: SECTIONS.experience,
-    to: `/#${SECTIONS.experience}`,
+    to: `#${SECTIONS.experience}`,
   },
   {
     label: SECTIONS.contact,
-    to: `/#${SECTIONS.contact}`,
+    to: `#${SECTIONS.contact}`,
   },
 ];
 
@@ -31,8 +31,9 @@ export default function Home() {
             <Link
               key={label}
               href={to}
+              scroll
               // TODO: Add active state
-              className="font-secondary inline-block text-cream select-none px-6 py-3 border-[rgba(255,255,255,0.2)] first:border-l-2 border-r-2 text-base tracking-wider hover:text-yellow hover:bg-ink"
+              className="font-secondary inline-block text-cream cursor-pointer select-none px-6 py-3 border-[rgba(255,255,255,0.2)] first:border-l-2 border-r-2 text-base tracking-wider hover:text-yellow hover:bg-ink"
             >
               {label}
             </Link>
@@ -40,7 +41,8 @@ export default function Home() {
         </nav>
       </header>
       <Summary />
-      {/* <section id={SECTIONS.skills}>skills</section>
+      <Skills />
+      {/* 
       <section id={SECTIONS.experience}>experience</section>
       <section id={SECTIONS.contact}>contact</section>
       <footer>footer</footer> */}
