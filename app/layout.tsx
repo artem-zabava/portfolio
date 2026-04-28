@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito, Luckiest_Guy, Courier_Prime } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 
 const nunuto = Nunito({
@@ -35,6 +36,7 @@ export default function RootLayout({
       className={`${nunuto.variable} ${luckiestGuy.variable} ${courierPrime.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
+      <SpeedInsights />
     </html>
   );
 }

@@ -41,9 +41,9 @@ export const Summary = () => {
             >
               <Button className="bg-red text-cream">Check out my CV</Button>
             </Link>
-            <Link href={`/#${SECTIONS.contact}`}>
+            <a href={`/#${SECTIONS.contact}`}>
               <Button className="bg-yellow">Get In Touch</Button>
-            </Link>
+            </a>
             {/* <Button className="bg-blue text-cream">LinkedIn ↗</Button> */}
           </div>
         </div>
