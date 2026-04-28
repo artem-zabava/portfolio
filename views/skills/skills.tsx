@@ -2,8 +2,9 @@ import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
 import { Label } from "@/components/label";
 import { Reveal } from "@/components/reveal";
+import { Section } from "@/components/section";
 import { Title } from "@/components/title";
-import { SECTIONS } from "@/lib/consts";
+import { REVEAL_DELAY, SECTIONS } from "@/lib/consts";
 import { cn } from "@/lib/utils";
 import { Fragment } from "react/jsx-runtime";
 
@@ -108,19 +109,16 @@ const SkillRow = ({ category, items, icon, color }: Row) => {
 
 export const Skills = () => {
   return (
-    <section
-      id={SECTIONS.skills}
-      className="min-h-[calc(100vh-3rem)] py-12 px-6 bg-[#E8DFC8] scroll-mt-12"
-    >
+    <Section id={SECTIONS.skills} className="bg-[#E8DFC8]">
       <Container>
-        <Label text="What I Know" className="bg-red text-cream mb-3" />
+        <Label className="bg-red text-cream mb-3">What I Know</Label>
         <Title className="mb-7">Skills & Stack</Title>
         <div className="flex flex-col gap-4.5">
           {rows.map((row, index) => {
             const isNotLast = index !== rows.length - 1;
             return (
               <Fragment key={row.category}>
-                <Reveal delay={index * 0.06}>
+                <Reveal delay={index * REVEAL_DELAY}>
                   <SkillRow {...row} />
                 </Reveal>
                 {isNotLast ? <Divider /> : null}
@@ -129,6 +127,6 @@ export const Skills = () => {
           })}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };

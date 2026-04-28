@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SECTIONS } from "@/lib/consts";
 import { Skills } from "@/views/skills";
 import { Summary } from "@/views/summary";
+import { Experience } from "@/views/experience";
 
 const links = [
   {
@@ -42,8 +43,8 @@ export default function Home() {
       </header>
       <Summary />
       <Skills />
+      <Experience />
       {/* 
-      <section id={SECTIONS.experience}>experience</section>
       <section id={SECTIONS.contact}>contact</section>
       <footer>footer</footer> */}
     </main>

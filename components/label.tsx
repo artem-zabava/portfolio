@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
+import { PropsWithChildren } from "react";
 
-type Props = {
-  text: string;
+export const Label = ({
+  children,
+  className,
+}: PropsWithChildren<{
   className: string;
-};
-
-export const Label = ({ text, className }: Props) => {
+}>) => {
   return (
     <div
       className={cn(
@@ -13,7 +14,7 @@ export const Label = ({ text, className }: Props) => {
         className,
       )}
     >
-      {text}
+      {children}
     </div>
   );
 };

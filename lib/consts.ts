@@ -4,3 +4,5 @@ export const SECTIONS = {
   experience: "Experience",
   contact: "Contact",
 } as const;
+
+export const REVEAL_DELAY = 0.06;

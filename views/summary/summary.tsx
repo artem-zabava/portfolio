@@ -1,14 +1,12 @@
 import { Button } from "@/components/button";
+import { Section } from "@/components/section";
 import { Stars } from "@/components/stars";
 import { Terminal } from "@/components/terminal";
 import { SECTIONS } from "@/lib/consts";
 
 export const Summary = () => {
   return (
-    <section
-      id={SECTIONS.home}
-      className="pt-25 pb-15 px-10 min-h-dvh relative overflow-hidden"
-    >
+    <Section id={SECTIONS.home} className="pt-25 pb-15 min-h-dvh">
       <Stars />
       <div className="flex gap-14 justify-center items-center h-full self-stretch">
         <div className="flex flex-col gap-5 h-full">
@@ -39,6 +37,6 @@ export const Summary = () => {
         </div>
         <Terminal />
       </div>
-    </section>
+    </Section>
   );
 };
