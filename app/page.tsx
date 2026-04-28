@@ -4,23 +4,24 @@ import { Skills } from "@/views/skills";
 import { Summary } from "@/views/summary";
 import { Experience } from "@/views/experience";
 import { Contact } from "@/views/contact";
+import { Icon } from "@/components/icon";
 
 const links = [
   {
     label: SECTIONS.home,
-    to: `#${SECTIONS.home}`,
+    to: `/#${SECTIONS.home}`,
   },
   {
     label: SECTIONS.skills,
-    to: `#${SECTIONS.skills}`,
+    to: `/#${SECTIONS.skills}`,
   },
   {
     label: SECTIONS.experience,
-    to: `#${SECTIONS.experience}`,
+    to: `/#${SECTIONS.experience}`,
   },
   {
     label: SECTIONS.contact,
-    to: `#${SECTIONS.contact}`,
+    to: `/#${SECTIONS.contact}`,
   },
 ];
 
@@ -46,9 +47,9 @@ export default function Home() {
       <Skills />
       <Experience />
       <Contact />
-      {/* 
-      <section id={SECTIONS.contact}>contact</section>
-      <footer>footer</footer> */}
+      <footer className="bg-ink text-cream text-center p-6 font-bold">
+        Made with&nbsp;<Icon className="inline fill-yellow stroke-yellow" name="star" size={24} />&nbsp;by Artem Zabava · 2026
+      </footer>
     </main>
   );
 }

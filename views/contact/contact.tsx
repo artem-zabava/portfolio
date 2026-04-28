@@ -12,10 +12,10 @@ import { links } from "./links";
 
 export const Contact = () => {
   return (
-    <Section id={SECTIONS.contact} className="bg-blue">
+    <Section id={SECTIONS.contact} className="bg-blue min-h-auto">
       <Container>
         <Label className="bg-yellow text-ink mb-3">Say Hello</Label>
-        <Title className="mb-7 text-cream">Get In Touch</Title>
+        <Title className="mb-4 text-cream">Get In Touch</Title>
         <div className="grid grid-cols-2 gap-8">
           <div className="flex flex-col gap-4">
             {links.map(({ to, title, description, icon }, index) => {
@@ -46,7 +46,10 @@ export const Contact = () => {
             })}
           </div>
           <Reveal>
-            <form className="bg-cream border-4 rounded-xl gap-3.5 flex flex-col shadow p-7">
+            <form
+              className="bg-cream border-4 rounded-xl gap-3.5 flex flex-col shadow p-7"
+              autoComplete="off"
+            >
               <div className="font-secondary tracking-normal text-xl">
                 Send a Message
               </div>
@@ -88,7 +91,7 @@ export const Contact = () => {
                 />
               </div>
               <Button className="bg-yellow" type="submit">
-                Send It! ✦
+                Send It!
               </Button>
             </form>
           </Reveal>

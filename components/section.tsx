@@ -13,7 +13,7 @@ export const Section = ({
     <section
       id={id}
       className={cn(
-        "min-h-[calc(100vh-3rem)] py-12 px-6 scroll-mt-12 relative overflow-hidden",
+        "min-h-[calc(100vh-3rem)] py-10 px-6 scroll-mt-12 relative overflow-hidden",
         className,
       )}
     >

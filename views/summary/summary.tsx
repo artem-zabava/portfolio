@@ -1,8 +1,10 @@
 import { Button } from "@/components/button";
+import { Icon } from "@/components/icon";
 import { Section } from "@/components/section";
 import { Stars } from "@/components/stars";
 import { Terminal } from "@/components/terminal";
 import { SECTIONS } from "@/lib/consts";
+import Link from "next/link";
 
 export const Summary = () => {
   return (
@@ -11,7 +13,9 @@ export const Summary = () => {
       <div className="flex gap-14 justify-center items-center h-full self-stretch">
         <div className="flex flex-col gap-5 h-full">
           <div className="flex w-fit px-5 py-1.5 font-extrabold rounded-full shadow-ink shadow-sm bg-yellow border-ink border-4 animate-pop animate-delay-100">
-            <span>👋 &nbsp;</span>
+            <div className="flex justify-center items-center">
+              <Icon name="hand" size={16} className="stroke-ink" /> &nbsp;
+            </div>
             <h2>{"console.log('Hello world!');"}</h2>
           </div>
           <h1 className="font-secondary font-bold text-[clamp(3.5rem,10vw,8rem)] leading-none text-ink [-webkit-text-stroke:2px_var(--ink)] animate-slide animate-delay-200">
@@ -30,9 +34,17 @@ export const Summary = () => {
             user-facing features.
           </p>
           <div className="flex gap-4 animate-slide animate-delay-650">
-            <Button className="bg-red text-cream">View Experience</Button>
-            <Button className="bg-yellow">Get In Touch</Button>
-            <Button className="bg-blue text-cream">LinkedIn ↗</Button>
+            <Link
+              href="/Artem_Zabava_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-red text-cream">Check out my CV</Button>
+            </Link>
+            <Link href={`/#${SECTIONS.contact}`}>
+              <Button className="bg-yellow">Get In Touch</Button>
+            </Link>
+            {/* <Button className="bg-blue text-cream">LinkedIn ↗</Button> */}
           </div>
         </div>
         <Terminal />

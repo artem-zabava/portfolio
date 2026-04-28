@@ -1,5 +1,6 @@
 import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
+import { Icon, IconName } from "@/components/icon";
 import { Label } from "@/components/label";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
@@ -11,7 +12,7 @@ import { Fragment } from "react/jsx-runtime";
 type Row = {
   category: string;
   items: string[];
-  icon: string;
+  icon: IconName;
   color: string;
 };
 
@@ -19,13 +20,13 @@ const rows: Row[] = [
   {
     category: "Languages",
     items: ["TypeScript", "JavaScript", "Go", "SQL", "GraphQL"],
-    icon: "💬",
+    icon: "fileCode",
     color: "#FFE8E8",
   },
   {
     category: "Backend",
     items: ["Node.js", "NestJS", "REST APIs", "Microservices", "Event-driven"],
-    icon: "⚙️",
+    icon: "server",
     color: "#E0ECFF",
   },
   {
@@ -40,7 +41,7 @@ const rows: Row[] = [
       "shadcn/ui",
       "Storybook",
     ],
-    icon: "🎨",
+    icon: "palette",
     color: "#FFF8D0",
   },
   {
@@ -54,7 +55,7 @@ const rows: Row[] = [
       "Pulumi",
       "SST",
     ],
-    icon: "☁️",
+    icon: "cloud",
     color: "#E0F5EA",
   },
   {
@@ -68,7 +69,7 @@ const rows: Row[] = [
       "OpenTelemetry",
       "Datadog",
     ],
-    icon: "📊",
+    icon: "databaseSearch",
     color: "#F0E0FF",
   },
 ];
@@ -81,7 +82,7 @@ const SkillRow = ({ category, items, icon, color }: Row) => {
           className="h-11 w-11 rounded-full border-4 border-ink flex items-center justify-center text-xl shadow-sm"
           style={{ background: color }}
         >
-          {icon}
+          <Icon name={icon} size={20} />
         </div>
         <div className="font-secondary text-xs tracking-wider leading-none text-center">
           {category}
