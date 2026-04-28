@@ -14,6 +14,7 @@ import {
   Palette,
   Cloud,
   DatabaseSearch,
+  LoaderCircle,
 } from "lucide-react";
 
 const LinkedIn = () => {
@@ -36,6 +37,7 @@ const iconMap = {
   palette: Palette,
   cloud: Cloud,
   databaseSearch: DatabaseSearch,
+  loaderCircle: LoaderCircle,
 } as const;
 
 export type IconName = keyof typeof iconMap;

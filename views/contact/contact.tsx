@@ -1,4 +1,3 @@
-import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { Icon } from "@/components/icon";
 import { Label } from "@/components/label";
@@ -9,6 +8,7 @@ import { REVEAL_DELAY, SECTIONS } from "@/lib/consts";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { links } from "./links";
+import { ContactForm } from "./form";
 
 export const Contact = () => {
   return (
@@ -46,54 +46,7 @@ export const Contact = () => {
             })}
           </div>
           <Reveal>
-            <form
-              className="bg-cream border-4 rounded-xl gap-3.5 flex flex-col shadow p-7"
-              autoComplete="off"
-            >
-              <div className="font-secondary tracking-normal text-xl">
-                Send a Message
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-extrabold" htmlFor="name">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Who are you?"
-                  className="border-3 py-2.5 px-3.5 text-sm font-semibold shadow-sm focus:border-blue focus:shadow-blue outline-none rounded-lg bg-cream-dark"
-                  required
-                  autoComplete="off"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-extrabold" htmlFor="email">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="your@email.com"
-                  className="border-3 py-2.5 px-3.5 text-sm font-semibold shadow-sm focus:border-blue focus:shadow-blue outline-none rounded-lg bg-cream-dark"
-                  required
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-extrabold" htmlFor="msg">
-                  Message
-                </label>
-                <textarea
-                  id="msg"
-                  placeholder="What's on your mind?"
-                  className="border-3 py-2.5 px-3.5 text-sm font-semibold shadow-sm focus:border-blue focus:shadow-blue outline-none rounded-lg bg-cream-dark resize-y min-h-25"
-                  required
-                  autoComplete="off"
-                />
-              </div>
-              <Button className="bg-yellow" type="submit">
-                Send It!
-              </Button>
-            </form>
+            <ContactForm />
           </Reveal>
         </div>
       </Container>

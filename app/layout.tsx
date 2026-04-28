@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito, Luckiest_Guy, Courier_Prime } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Toaster } from 'sonner';
+
 import "./globals.css";
 
 const nunuto = Nunito({
@@ -37,6 +39,22 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">{children}</body>
       <SpeedInsights />
+      <Toaster
+        position="top-right"
+        offset={24}
+        toastOptions={{
+          unstyled: true,
+          classNames: {
+            toast:
+              "flex items-center gap-3 w-full bg-cream border-4 border-ink rounded-xl shadow p-4 font-primary font-extrabold text-ink",
+            title: "text-sm",
+            description: "text-xs font-semibold opacity-70",
+            success: "bg-cream! text-green!",
+            error: "bg-red-light! text-cream!",
+            icon: "shrink-0",
+          },
+        }}
+      />
     </html>
   );
 }
