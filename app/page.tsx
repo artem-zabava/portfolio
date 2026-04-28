@@ -3,6 +3,7 @@ import { SECTIONS } from "@/lib/consts";
 import { Skills } from "@/views/skills";
 import { Summary } from "@/views/summary";
 import { Experience } from "@/views/experience";
+import { Contact } from "@/views/contact";
 
 const links = [
   {
@@ -44,6 +45,7 @@ export default function Home() {
       <Summary />
       <Skills />
       <Experience />
+      <Contact />
       {/* 
       <section id={SECTIONS.contact}>contact</section>
       <footer>footer</footer> */}

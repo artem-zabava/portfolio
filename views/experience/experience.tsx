@@ -29,7 +29,7 @@ export const Experience = () => {
             return (
               <div
                 key={`${name}${startDate}`}
-                className="relative before:left-5 before:top-0 before:bottom-0 before:w-1 before:bg-ink before:rounded-xs before:absolute"
+                className="relative before:left-5 before:top-25 before:bottom-0 before:w-1 before:bg-ink before:rounded-xs before:absolute"
               >
                 <CompanyTitle
                   name={name}
