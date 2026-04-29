@@ -89,5 +89,5 @@ export const submitContact = async (
     };
   }
 
-  return { status: "success", message: "Message sent — talk soon!" };
+  return { status: "success", message: "Message sent - talk soon!" };
 };

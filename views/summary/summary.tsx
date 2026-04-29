@@ -30,7 +30,7 @@ export const Summary = () => {
             5 years building fintech products, integration systems, and internal
             tools.
             <br />
-            TypeScript · Node.js · React · AWS — from backend APIs to
+            TypeScript · Node.js · React · AWS - from backend APIs to
             user-facing features.
           </p>
           <div className="flex flex-1 self-stretch flex-col md:flex-row gap-3 md:gap-4 animate-slide animate-delay-650">
