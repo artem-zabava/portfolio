@@ -22,9 +22,28 @@ const courierPrime = Courier_Prime({
   weight: "700",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Artem Zabava",
   description: "Software Development Engineer",
+  openGraph: {
+    title: "Artem Zabava",
+    description: "Software Development Engineer",
+    url: "/",
+    siteName: "Artem Zabava",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Artem Zabava",
+    description: "Software Development Engineer",
+  },
 };
 
 export default function RootLayout({
