@@ -42,7 +42,7 @@ export const Nav = () => {
           key={label}
           href={to}
           className={cn(
-            "font-secondary inline-block text-cream cursor-pointer select-none px-6 py-3 border-[rgba(255,255,255,0.2)] first:border-l-2 border-r-2 text-base tracking-wider hover:text-yellow hover:bg-ink",
+            "font-secondary inline-block text-cream cursor-pointer select-none px-3 py-2.5 sm:px-6 sm:py-3 border-[rgba(255,255,255,0.2)] first:border-l-2 border-r-2 text-sm sm:text-base tracking-wider hover:text-yellow hover:bg-ink",
             active === label && "bg-[rgba(0,0,0,0.25)]",
           )}
         >

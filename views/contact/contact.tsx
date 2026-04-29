@@ -16,7 +16,7 @@ export const Contact = () => {
       <Container>
         <Label className="bg-yellow text-ink mb-3">Say Hello</Label>
         <Title className="mb-4 text-cream">Get In Touch</Title>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="flex flex-col gap-4">
             {links.map(({ to, title, description, icon }, index) => {
               return (

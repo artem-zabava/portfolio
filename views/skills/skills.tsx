@@ -36,8 +36,8 @@ const rows: Row[] = [
       "Next.js",
       "Redux",
       "React Query",
-      "Vite",
       "Tailwind CSS",
+      "Vite",
       "shadcn/ui",
       "Storybook",
     ],
@@ -49,11 +49,11 @@ const rows: Row[] = [
     items: [
       "AWS",
       "Lambda",
-      "API Gateway",
       "SQS / S3",
       "Docker",
       "Pulumi",
       "SST",
+      "API Gateway",
     ],
     icon: "cloud",
     color: "#E0F5EA",
@@ -76,15 +76,15 @@ const rows: Row[] = [
 
 const SkillRow = ({ category, items, icon, color }: Row) => {
   return (
-    <div className="flex items-center gap-6">
-      <div className="flex flex-col items-center justify-center w-28 gap-2">
+    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+      <div className="flex sm:flex-col items-center sm:justify-center sm:w-28 gap-3 sm:gap-2 min-w-28">
         <div
-          className="h-11 w-11 rounded-full border-4 border-ink flex items-center justify-center text-xl shadow-sm"
+          className="h-11 w-11 rounded-full border-4 border-ink items-center justify-center text-xl shadow-sm hidden sm:flex"
           style={{ background: color }}
         >
           <Icon name={icon} size={20} />
         </div>
-        <div className="font-secondary text-xs tracking-wider leading-none text-center">
+        <div className="font-secondary text-sm sm:text-xs tracking-wider leading-none sm:text-center">
           {category}
         </div>
       </div>

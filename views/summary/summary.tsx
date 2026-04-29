@@ -8,10 +8,10 @@ import Link from "next/link";
 
 export const Summary = () => {
   return (
-    <Section id={SECTIONS.home} className="pt-25 pb-15 min-h-dvh">
+    <Section id={SECTIONS.home} className="pt-20 pb-10 sm:pt-25 sm:pb-15 min-h-dvh">
       <Stars />
-      <div className="flex gap-14 justify-center items-center h-full self-stretch">
-        <div className="flex flex-col gap-5 h-full">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-14 justify-center items-center h-full self-stretch">
+        <div className="flex flex-col items-center md:items-baseline gap-5 h-full">
           <div className="flex w-fit px-5 py-1.5 font-extrabold rounded-full shadow-ink shadow-sm bg-yellow border-ink border-4 animate-pop animate-delay-100">
             <div className="flex justify-center items-center">
               <Icon name="hand" size={16} className="stroke-ink" /> &nbsp;
@@ -33,18 +33,17 @@ export const Summary = () => {
             TypeScript · Node.js · React · AWS — from backend APIs to
             user-facing features.
           </p>
-          <div className="flex gap-4 animate-slide animate-delay-650">
+          <div className="flex flex-1 self-stretch flex-col md:flex-row gap-3 md:gap-4 animate-slide animate-delay-650">
             <Link
               href="/Artem_Zabava_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-red text-cream">Check out my CV</Button>
+              <Button className="w-full bg-red text-cream">Check out my CV</Button>
             </Link>
             <a href={`/#${SECTIONS.contact}`}>
-              <Button className="bg-yellow">Get In Touch</Button>
+              <Button className="w-full bg-yellow">Get In Touch</Button>
             </a>
-            {/* <Button className="bg-blue text-cream">LinkedIn ↗</Button> */}
           </div>
         </div>
         <Terminal />

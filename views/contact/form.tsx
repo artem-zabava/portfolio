@@ -45,7 +45,7 @@ export const ContactForm = () => {
   return (
     <form
       action={formAction}
-      className="bg-cream border-4 rounded-xl gap-3.5 flex flex-col shadow p-7"
+      className="bg-cream border-4 rounded-xl gap-3.5 flex flex-col shadow p-5 sm:p-7"
       autoComplete="off"
     >
       <div className="font-secondary tracking-normal text-xl">

@@ -17,7 +17,7 @@ export const Star = ({ className, icon, size }: StarProps) => {
 
 export const Stars = () => {
   return (
-    <div className="absolute h-full w-full">
+    <div className="absolute h-full w-full hidden md:block">
       <Star size={32} className="top-1/20 left-2/24" icon="sparkles" />
       <Star
         size={26}

@@ -29,7 +29,7 @@ export const Experience = () => {
             return (
               <div
                 key={`${name}${startDate}`}
-                className="relative before:left-5 before:top-25 before:bottom-0 before:w-1 before:bg-ink before:rounded-xs before:absolute"
+                className="relative before:left-3 sm:before:left-5 before:top-25 before:bottom-0 before:w-1 before:bg-ink before:rounded-xs before:absolute"
               >
                 <CompanyTitle
                   name={name}
@@ -40,11 +40,11 @@ export const Experience = () => {
                   delay={0}
                 />
                 <Reveal delay={REVEAL_DELAY}>
-                  <p className="py-5 pr-6 pl-16 font-semibold max-w-4xl">
+                  <p className="py-5 pr-2 pl-10 sm:pr-6 sm:pl-16 font-semibold max-w-4xl">
                     {description}
                   </p>
                 </Reveal>
-                <div className="ml-11 flex flex-col gap-5">
+                <div className="ml-7 sm:ml-11 flex flex-col gap-5">
                   {projects.map((project) => {
                     return (
                       <ProjectRow
