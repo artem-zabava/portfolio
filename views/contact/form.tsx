@@ -116,6 +116,15 @@ export const ContactForm = () => {
           </p>
         )}
       </div>
+      {/* honeypot */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        aria-hidden="true"
+        autoComplete="off"
+        className="absolute -left-2000 opacity-0 pointer-events-none"
+      />
       <SubmitButton />
     </form>
   );

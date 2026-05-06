@@ -24,6 +24,10 @@ export const submitContact = async (
   _prev: ContactState,
   formData: FormData,
 ): Promise<ContactState> => {
+  if (formData.get("website")) {
+    return { status: "success", message: "Message sent - talk soon!" };
+  }
+
   const values: ContactFields = {
     name: String(formData.get("name") ?? ""),
     email: String(formData.get("email") ?? ""),
