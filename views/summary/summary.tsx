@@ -4,7 +4,6 @@ import { Section } from "@/components/section";
 import { Stars } from "@/components/stars";
 import { Terminal } from "@/components/terminal";
 import { SECTIONS } from "@/lib/consts";
-import Link from "next/link";
 
 export const Summary = () => {
   return (
@@ -34,13 +33,13 @@ export const Summary = () => {
             user-facing features.
           </p>
           <div className="flex flex-1 self-stretch flex-col md:flex-row gap-3 md:gap-4 animate-slide animate-delay-650">
-            <Link
+            <a
               href="/Artem_Zabava_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="w-full bg-red text-cream">Check out my CV</Button>
-            </Link>
+            </a>
             <a href={`/#${SECTIONS.contact}`}>
               <Button className="w-full bg-yellow">Get In Touch</Button>
             </a>
