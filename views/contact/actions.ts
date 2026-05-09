@@ -34,6 +34,31 @@ export const submitContact = async (
     message: String(formData.get("message") ?? ""),
   };
 
+  const turnstileToken = formData.get("cf-turnstile-response");
+  if (!turnstileToken || typeof turnstileToken !== "string") {
+    return { status: "error", message: "Please complete the CAPTCHA.", values };
+  }
+
+  const { TURNSTILE_SECRET_KEY } = process.env;
+  if (TURNSTILE_SECRET_KEY) {
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: TURNSTILE_SECRET_KEY,
+          response: turnstileToken,
+        }),
+        cache: "no-store",
+      },
+    );
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      return { status: "error", message: "CAPTCHA verification failed. Please try again.", values };
+    }
+  }
+
   const parsed = schema.safeParse(values);
 
   if (!parsed.success) {

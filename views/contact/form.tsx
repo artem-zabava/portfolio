@@ -1,6 +1,7 @@
 "use client";
 import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
+import Script from "next/script";
 import { Button } from "@/components/button";
 import { submitContact, type ContactState } from "./actions";
 import { Icon } from "@/components/icon";
@@ -43,6 +44,7 @@ export const ContactForm = () => {
   }, [state]);
 
   return (
+    <>
     <form
       action={formAction}
       className="bg-cream border-4 rounded-xl gap-3.5 flex flex-col shadow p-5 sm:p-7"
@@ -125,7 +127,14 @@ export const ContactForm = () => {
         autoComplete="off"
         className="absolute -left-2000 opacity-0 pointer-events-none"
       />
+      <div
+        className="cf-turnstile"
+        data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+        data-theme="light"
+      />
       <SubmitButton />
     </form>
+    <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" />
+    </>
   );
 };
